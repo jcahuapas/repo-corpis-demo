@@ -19,5 +19,8 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
-print('FIN - C O R P I S')
 print(response.text)
+
+if __name__ == "__main__":
+    if response.status_code == 200:
+        print('FIN - C O R P I S')
