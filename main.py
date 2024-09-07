@@ -18,7 +18,8 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': f'Bearer {whatsapp_token}'
+  #'Authorization': f'Bearer {whatsapp_token}'
+  'Authorization': 'Bearer EAAQMT3uwSPIBO7TNoqHGT8xZBezX4IkFZCRlJC6Q9BeUBZB2wTg6ZASe0RrEdW5rd4kH1ZB67Ebq9GFZAykO0H6zH0zMKjVrLuDMDJnAkzVBqKs2Gaye8eDukmVakSHLOEKphGWEjeauIrJJBJTJN8eOatoLWZAcUepqMUD5ZCRlfxzXY83IlVB4l3bRPnSZBt7zB6z8GVLxRKo0bLSY5arIyrs9t7s9pRZCaxZAUI5ySqT'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
