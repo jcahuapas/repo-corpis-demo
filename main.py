@@ -5,6 +5,7 @@ import json
 
 whatsapp_token = os.getenv('FB_WHATSAPP_TOKEN')
 
+print(whatsapp_token)
 ##JHONNATAN
 url = "https://graph.facebook.com/v20.0/279308521943312/messages"
 
