@@ -26,3 +26,5 @@ jobs:
           
       - name: execute py script # run main.py        
         run: python main.py
+        env:
+          FB_WHATSAPP_TOKEN: ${{ secrets.FB_WHATSAPP_TOKEN }}

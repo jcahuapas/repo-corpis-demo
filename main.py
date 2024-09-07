@@ -1,8 +1,12 @@
+import os
 import requests
 import json
 
+
+whatsapp_token = os.getenv('FB_WHATSAPP_TOKEN')
+
 ##JHONNATAN
-url = "https://graph.facebook.com/v19.0/279308521943312/messages"
+url = "https://graph.facebook.com/v20.0/279308521943312/messages"
 
 payload = json.dumps({
   "messaging_product": "whatsapp",
@@ -14,7 +18,7 @@ payload = json.dumps({
 })
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': 'Bearer EAAQMT3uwSPIBO71amuURGNL1JNRTEEZBC5LIFGhAIdZAnvp0yXGJU1VQZAd9QumQCYpG4OZB0RLUhLWpIvigpTmjDVLtlpN6039aAwJOtE0ZC0FNDvcDQ8xrrUeUFmeYR0cZAYMKtthRFW7vlRMZAn5coDOwxyLxNWzoSAKY0k5yh7WXZB3fRatlhhoyn6OnvywPeUdbAwVttMS9Y5zr6uePz6tHa3HE1KMg5ZC7SYx4ZD'
+  'Authorization': f'Bearer {whatsapp_token}'
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
