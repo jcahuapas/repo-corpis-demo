@@ -17,13 +17,10 @@ payload = json.dumps({
     "link": "https://drive.google.com/uc?export=download&id=1V1s3ahJdyOj4lnyNDsyF9hB32uih3nIg"
   }
 })
-print ('token: ' + whatsapp_token)
-var1 =f'Bearer {whatsapp_token}'
-print(var1)
+
 headers = {
   'Content-Type': 'application/json',
-  'Authorization': f'Bearer {whatsapp_token}'
-  #'Authorization': 'Bearer EAAQMT3uwSPIBO7TNoqHGT8xZBezX4IkFZCRlJC6Q9BeUBZB2wTg6ZASe0RrEdW5rd4kH1ZB67Ebq9GFZAykO0H6zH0zMKjVrLuDMDJnAkzVBqKs2Gaye8eDukmVakSHLOEKphGWEjeauIrJJBJTJN8eOatoLWZAcUepqMUD5ZCRlfxzXY83IlVB4l3bRPnSZBt7zB6z8GVLxRKo0bLSY5arIyrs9t7s9pRZCaxZAUI5ySqT'
+  'Authorization': f'Bearer {whatsapp_token}'  
 }
 
 response = requests.request("POST", url, headers=headers, data=payload)
