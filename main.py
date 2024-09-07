@@ -5,7 +5,7 @@ import json
 
 whatsapp_token = os.getenv('FB_WHATSAPP_TOKEN')
 
-print(whatsapp_token)
+
 ##JHONNATAN
 url = "https://graph.facebook.com/v20.0/279308521943312/messages"
 
@@ -17,6 +17,9 @@ payload = json.dumps({
     "link": "https://drive.google.com/uc?export=download&id=1V1s3ahJdyOj4lnyNDsyF9hB32uih3nIg"
   }
 })
+print ('token: ' + whatsapp_token)
+var1 =f'Bearer {whatsapp_token}'
+print(var1)
 headers = {
   'Content-Type': 'application/json',
   'Authorization': f'Bearer {whatsapp_token}'
