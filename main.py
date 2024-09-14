@@ -100,6 +100,7 @@ class DataPipeline:
                         logging.warning(f"No se encontró el archivo {dash}.png en GDrive tras subirlo")
                 
                 logging.info(f"  --->    FIN : {dash}       <---   ")
+                print('FIN - C O R P I S')
             except Exception as e:
                 logging.error(f"Error en el pipeline de {dash}: {str(e)}")
             #self.whatsapp_api.send_img_via_whatsapp(id_file_in_folder)
