@@ -83,10 +83,33 @@ class DashboardGenerator:
 
         # Convertir el campo MONTO a numérico        
         gasto_total_por_categoria = df_filtrado.groupby('CATEGORIA')['MTO_SOL'].sum().reset_index()
-        monto_combustible = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'COMBUSTIBLE']['MTO_SOL'].values[0]        
-        monto_peajes = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'PEAJES']['MTO_SOL'].values[0]
-        monto_super = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'SUPERMERCADO']['MTO_SOL'].values[0]
-        monto_resto = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'RESTAURANTE']['MTO_SOL'].values[0]
+        
+        filtro_co = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'COMBUSTIBLE']
+        if not filtro_co.empty:
+            monto_combustible = filtro_co['MTO_SOL'].values[0]
+        else:
+            monto_combustible = 0        
+
+        filtro_pe = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'PEAJES']
+
+        if not filtro_pe.empty:
+            monto_peajes = filtro_pe['MTO_SOL'].values[0]
+        else:
+            monto_peajes = 0
+
+        filtro_su = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'SUPERMERCADO']
+
+        if not filtro_su.empty:
+            monto_super = filtro_su['MTO_SOL'].values[0]
+        else:
+            monto_super = 0
+
+        filtro_re = gasto_total_por_categoria[gasto_total_por_categoria['CATEGORIA'] == 'RESTAURANTE']
+
+        if not filtro_re.empty:
+            monto_resto = filtro_re['MTO_SOL'].values[0]
+        else:
+            monto_resto = 0
 
         fig_2 = go.Figure()
         # Indicador para PEAJES
