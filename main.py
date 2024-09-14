@@ -48,8 +48,8 @@ class DataPipeline:
         
 
     def run_pipeline(self):
-        # dash_names = ['main_dash','budget_dash','categoria_bar_dash']
-        dash_names = ['main_dash']
+        dash_names = ['main_dash','budget_dash','categoria_bar_dash']
+        #dash_names = ['main_dash']
 
         # Leer Informacion desde el excel en Gdrive        
         id_file_xls_subido = self.buscar_id_archivo('(BBVA)_Movimientos_Tarjeta.xls',self.id_folder_in)                   
