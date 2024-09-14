@@ -1,1 +1,6 @@
+pandas==2.0.3
+plotly==5.18.0
+PyDrive2==1.19.0
+python_dateutil==2.8.2
 requests==2.31.0
+
