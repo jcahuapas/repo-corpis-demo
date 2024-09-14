@@ -82,7 +82,7 @@ class DataPipeline:
                 self.gdrive_api.subir_archivo(img_path_send,
                                             self.id_folder_out)
                 logging.info("Esperando para subir archivo ...")   
-                time.sleep(10)
+                time.sleep(25)
                 logging.info("Subiendo archivo ...")
                 logging.info(f"Imagen {dash}.png subida a GDrive")
 
