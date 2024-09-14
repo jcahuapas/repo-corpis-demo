@@ -52,7 +52,8 @@ class GDriveAPI:
             archivo = self.credenciales.CreateFile({'parents': [{"kind": "drive#fileLink",\
                                                             "id": id_folder}]})
             #LEER: para WINDOWS usar esta linea -> archivo['title'] = ruta_archivo.split("/")[-1]
-            archivo['title'] = ruta_archivo.split("\\")[-1]
+            #LEER: para WINDOWS y relativo usar esta linea -> archivo['title'] = ruta_archivo.split("\\")[-1]
+            archivo['title'] = ruta_archivo.split("/")[-1]
             archivo.SetContentFile(ruta_archivo)
             archivo.Upload()
         except FileNotUploadedError as e:
