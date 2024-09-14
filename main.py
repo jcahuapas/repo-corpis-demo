@@ -8,8 +8,6 @@ import os
 import requests
 import json
 
-from tabulate import tabulate
-
 
 class DataPipeline:
     def __init__(self):
