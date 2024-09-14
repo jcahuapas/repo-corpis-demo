@@ -15,14 +15,12 @@ class DataPipeline:
     def __init__(self):
         # Constantes
         self.current_dir = os.path.dirname(__file__)
-        self.id_folder_in = '1SWIK0g2cQcehhmtTc0-DL-21_2YKHO7_' #Para el archivo excel
-        self.id_folder_out = '18ZZDP-6hFKDvG36Uzio_EycQBR1zfbA6' #Donde se dejan las img a enviar          
-        self.id_file_cfg = '1qDihmqOnbtSMQh1TdjIoRqU__zvD-yu9' # donde se encuentra credentials_module.json en la Nube
-        #self.directorio_credenciales = os.path.join(self.current_dir, 'cfg','credentials_module.json')
+        self.id_folder_in = os.getenv('GH_ID_FOLDER_IN') #Para el archivo excel
+        self.id_folder_out = os.getenv('GH_ID_FOLDER_OUT') #Donde se dejan las img a enviar en la Nube          
+        self.id_file_cfg = os.getenv('GH_ID_FILE_CFG') # donde se encuentra credentials_module.json en la Nube
+        #self.directorio_credenciales = os.path.join(self.current_dir, 'cfg','credentials_module.json')    
+        self.whatsapp_token = os.getenv('GH_WHATSAPP_TOKEN')
         
-
-        #self.whatsapp_token = os.getenv('FB_WHATSAPP_TOKEN')
-        self.whatsapp_token = 'EAAQMT3uwSPIBO7TNoqHGT8xZBezX4IkFZCRlJC6Q9BeUBZB2wTg6ZASe0RrEdW5rd4kH1ZB67Ebq9GFZAykO0H6zH0zMKjVrLuDMDJnAkzVBqKs2Gaye8eDukmVakSHLOEKphGWEjeauIrJJBJTJN8eOatoLWZAcUepqMUD5ZCRlfxzXY83IlVB4l3bRPnSZBt7zB6z8GVLxRKo0bLSY5arIyrs9t7s9pRZCaxZAUI5ySqT'
 
         self.credenciales_dic = self.descargar_json_desde_drive(self.id_file_cfg)
 
