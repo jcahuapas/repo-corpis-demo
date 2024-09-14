@@ -28,4 +28,7 @@ jobs:
         run: |
           python main.py
         env:
-          FB_WHATSAPP_TOKEN: ${{ secrets.FB_WHATSAPP_TOKEN }}
+          GH_WHATSAPP_TOKEN: ${{ secrets.GH_WHATSAPP_TOKEN }}
+          GH_ID_FILE_CFG: ${{ secrets.GH_ID_FILE_CFG }}
+          GH_ID_FOLDER_IN: ${{ secrets.GH_ID_FOLDER_IN }}
+          GH_ID_FOLDER_OUT: ${{ secrets.GH_ID_FOLDER_OUT }}
